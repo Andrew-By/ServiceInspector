@@ -54,7 +54,7 @@ namespace Task1
                     current = 1;
                 }
             }
-            Console.WriteLine(string.Join(" ", orders));
+            Console.WriteLine(string.Join(", ", orders));
         }
     }
 }

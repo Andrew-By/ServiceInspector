@@ -13,17 +13,23 @@ namespace Task2
         static void Main(string[] args)
         {
             input = new int[] { 3, 1, 8, 5, 4 };
-            int target = 2;
+            TargetAsSum(10);
+            TargetAsSum(2);
+        }
+
+        static void TargetAsSum(int target)
+        {
+            Console.Write($"Число {target} ");
             foreach (int i in input)
             {
                 var result = new HashSet<int> { i };
                 if (CanSubtract(ref result, target - i))
                 {
-                    Console.WriteLine("Можно (" + string.Join("+", result) + ")");
+                    Console.WriteLine("можно представить в виде суммы (" + string.Join("+", result) + ")");
                     return;
                 }
             }
-            Console.WriteLine("Нельзя");
+            Console.WriteLine("нельзя представить в виде суммы");
         }
 
         static bool CanSubtract(ref HashSet<int> result, int current)
